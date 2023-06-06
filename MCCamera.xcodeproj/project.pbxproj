@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7941CEB2A25F09300E1F7CA /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7941CEA2A25F09300E1F7CA /* Test.swift */; };
+		D798C5262A29930800F7ECE4 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798C5252A29930800F7ECE4 /* Friend.swift */; };
+		D798C5282A29977800F7ECE4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798C5272A29977800F7ECE4 /* Image.swift */; };
+		D79A0C792A1F580000401BA0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C782A1F580000401BA0 /* CameraView.swift */; };
+		D79A0C7B2A1F582800401BA0 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C7A2A1F582800401BA0 /* CameraModel.swift */; };
+		D79A0C7D2A1F584700401BA0 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C7C2A1F584700401BA0 /* CameraViewModel.swift */; };
+		D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C7E2A1F587300401BA0 /* GalleryView.swift */; };
+		D79A0C812A1F589400401BA0 /* RoomCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C802A1F589400401BA0 /* RoomCreateView.swift */; };
+		D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C822A1F58A900401BA0 /* RoomView.swift */; };
 		D79C35DE2A1E0FBC00FAF987 /* MCCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C35DD2A1E0FBC00FAF987 /* MCCameraApp.swift */; };
-		D79C35E02A1E0FBC00FAF987 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C35DF2A1E0FBC00FAF987 /* ContentView.swift */; };
 		D79C35E22A1E0FBC00FAF987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79C35E12A1E0FBC00FAF987 /* Assets.xcassets */; };
 		D79C35E52A1E0FBC00FAF987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79C35E42A1E0FBC00FAF987 /* Preview Assets.xcassets */; };
 		D79C35EF2A1E0FBD00FAF987 /* MCCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C35EE2A1E0FBD00FAF987 /* MCCameraTests.swift */; };
 		D79C35F92A1E0FBD00FAF987 /* MCCameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C35F82A1E0FBD00FAF987 /* MCCameraUITests.swift */; };
 		D79C35FB2A1E0FBD00FAF987 /* MCCameraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C35FA2A1E0FBD00FAF987 /* MCCameraUITestsLaunchTests.swift */; };
+		D79C360C2A1E11C200FAF987 /* MCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C360B2A1E11C200FAF987 /* MCSession.swift */; };
+		D79C36122A1E128200FAF987 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C36112A1E128200FAF987 /* PairView.swift */; };
+		D79C36142A1E12D900FAF987 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C36132A1E12D900FAF987 /* StartView.swift */; };
+		D7F3AE992A2C71A5004A2857 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3AE982A2C71A5004A2857 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7941CEA2A25F09300E1F7CA /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		D798C5252A29930800F7ECE4 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		D798C5272A29977800F7ECE4 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D79A0C782A1F580000401BA0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D79A0C7A2A1F582800401BA0 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
+		D79A0C7C2A1F584700401BA0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		D79A0C7E2A1F587300401BA0 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		D79A0C802A1F589400401BA0 /* RoomCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreateView.swift; sourceTree = "<group>"; };
+		D79A0C822A1F58A900401BA0 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		D79C35DA2A1E0FBC00FAF987 /* MCCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79C35DD2A1E0FBC00FAF987 /* MCCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCameraApp.swift; sourceTree = "<group>"; };
-		D79C35DF2A1E0FBC00FAF987 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D79C35E12A1E0FBC00FAF987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D79C35E42A1E0FBC00FAF987 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D79C35EA2A1E0FBD00FAF987 /* MCCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +64,11 @@
 		D79C35F42A1E0FBD00FAF987 /* MCCameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCCameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79C35F82A1E0FBD00FAF987 /* MCCameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCameraUITests.swift; sourceTree = "<group>"; };
 		D79C35FA2A1E0FBD00FAF987 /* MCCameraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCameraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D79C360A2A1E10B200FAF987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D79C360B2A1E11C200FAF987 /* MCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSession.swift; sourceTree = "<group>"; };
+		D79C36112A1E128200FAF987 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
+		D79C36132A1E12D900FAF987 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		D7F3AE982A2C71A5004A2857 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +119,11 @@
 		D79C35DC2A1E0FBC00FAF987 /* MCCamera */ = {
 			isa = PBXGroup;
 			children = (
+				D79C360A2A1E10B200FAF987 /* Info.plist */,
+				D79C36092A1E106200FAF987 /* ViewModel */,
+				D79C36082A1E105C00FAF987 /* Model */,
+				D79C36072A1E0FD500FAF987 /* View */,
 				D79C35DD2A1E0FBC00FAF987 /* MCCameraApp.swift */,
-				D79C35DF2A1E0FBC00FAF987 /* ContentView.swift */,
 				D79C35E12A1E0FBC00FAF987 /* Assets.xcassets */,
 				D79C35E32A1E0FBC00FAF987 /* Preview Content */,
 			);
@@ -125,6 +153,40 @@
 				D79C35FA2A1E0FBD00FAF987 /* MCCameraUITestsLaunchTests.swift */,
 			);
 			path = MCCameraUITests;
+			sourceTree = "<group>";
+		};
+		D79C36072A1E0FD500FAF987 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D79C36112A1E128200FAF987 /* PairView.swift */,
+				D79C36132A1E12D900FAF987 /* StartView.swift */,
+				D79A0C782A1F580000401BA0 /* CameraView.swift */,
+				D79A0C7E2A1F587300401BA0 /* GalleryView.swift */,
+				D79A0C822A1F58A900401BA0 /* RoomView.swift */,
+				D79A0C802A1F589400401BA0 /* RoomCreateView.swift */,
+				D7941CEA2A25F09300E1F7CA /* Test.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D79C36082A1E105C00FAF987 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D79C360B2A1E11C200FAF987 /* MCSession.swift */,
+				D79A0C7A2A1F582800401BA0 /* CameraModel.swift */,
+				D798C5252A29930800F7ECE4 /* Friend.swift */,
+				D798C5272A29977800F7ECE4 /* Image.swift */,
+				D7F3AE982A2C71A5004A2857 /* Theme.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D79C36092A1E106200FAF987 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D79A0C7C2A1F584700401BA0 /* CameraViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +319,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D79C35E02A1E0FBC00FAF987 /* ContentView.swift in Sources */,
+				D79C36122A1E128200FAF987 /* PairView.swift in Sources */,
+				D79C36142A1E12D900FAF987 /* StartView.swift in Sources */,
+				D79C360C2A1E11C200FAF987 /* MCSession.swift in Sources */,
+				D798C5262A29930800F7ECE4 /* Friend.swift in Sources */,
+				D79A0C792A1F580000401BA0 /* CameraView.swift in Sources */,
+				D79A0C7D2A1F584700401BA0 /* CameraViewModel.swift in Sources */,
+				D798C5282A29977800F7ECE4 /* Image.swift in Sources */,
+				D7941CEB2A25F09300E1F7CA /* Test.swift in Sources */,
 				D79C35DE2A1E0FBC00FAF987 /* MCCameraApp.swift in Sources */,
+				D79A0C812A1F589400401BA0 /* RoomCreateView.swift in Sources */,
+				D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */,
+				D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */,
+				D79A0C7B2A1F582800401BA0 /* CameraModel.swift in Sources */,
+				D7F3AE992A2C71A5004A2857 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +494,19 @@
 				DEVELOPMENT_TEAM = 5BU7UB3WPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MCCamera/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Wemage;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 동의?";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "네트워크 동의?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치동의?";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가 동의?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,11 +531,19 @@
 				DEVELOPMENT_TEAM = 5BU7UB3WPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MCCamera/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Wemage;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 동의?";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "네트워크 동의?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치동의?";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가 동의?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
