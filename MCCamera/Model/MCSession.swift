@@ -39,7 +39,9 @@ class RPSMultipeerSession: NSObject, ObservableObject {
     public let session: MCSession
     
     //add re-connection function
-    public var friendList: [MCPeerID] = []
+    //public var friendList: [Friend] = []
+    
+    public var friendList = Set<Friend>();
     
         
     private let log = Logger()
@@ -89,11 +91,14 @@ class RPSMultipeerSession: NSObject, ObservableObject {
 //    }
     
     //test
-    func send(image: UIImage) {
+    func send(image: Data) {
         if !session.connectedPeers.isEmpty {
             log.info("sendMove: \(String(describing: image)) to \(self.session.connectedPeers[0].displayName)")
             do {
-                try session.send(image.jpegData(compressionQuality: 0.9)!, toPeers: session.connectedPeers, with: .reliable)
+                
+                
+                
+                try session.send(image, toPeers: session.connectedPeers, with: .reliable)
                 print("send it gg")
             } catch {
                 log.error("Error sending: \(String(describing: error))")
@@ -110,9 +115,9 @@ class RPSMultipeerSession: NSObject, ObservableObject {
         print("compare")
         for friend in friendList{
             print("compare2\n")
-            print(friendList)
+         
             for peer in availablePeers{
-                if(friend.displayName == peer.displayName){
+                if(friend.peerId.displayName == peer.displayName){
                     self.serviceBrowser.invitePeer(peer, to: self.session, withContext: nil, timeout: 30)
                     if (invitationHandler != nil) {
                         invitationHandler!(true, session)
@@ -187,6 +192,11 @@ extension RPSMultipeerSession: MCSessionDelegate {
             // Peer disconnected
             DispatchQueue.main.async {
                 self.paired = false
+                for friend in self.friendList{
+                    if(friend.peerId  == peerID){
+                        friend.connectionChange()
+                    }
+                }
             }
             // Peer disconnected, start accepting invitaions again
             serviceAdvertiser.startAdvertisingPeer()
@@ -195,12 +205,15 @@ extension RPSMultipeerSession: MCSessionDelegate {
             // Peer connected
             DispatchQueue.main.async {
                 self.paired = true
+             
             }
             // We are paired, stop accepting invitations
             serviceAdvertiser.stopAdvertisingPeer()
             
             //add re-connection function
-            self.friendList.append(peerID)
+            let newFriend = Friend(isConnected: true, peerId: peerID)
+            
+            self.friendList.insert(newFriend)
             break
         default:
             // Peer connecting or something else
@@ -230,6 +243,25 @@ extension RPSMultipeerSession: MCSessionDelegate {
             DispatchQueue.main.async {
                 self.receivedImage = img
                 print("receive it gg")
+                
+                let rvdImg = ImgType(img: img, isStored: false)
+                
+                for friend in self.friendList{
+                    if(friend.peerId  == peerID){
+                        friend.addImage(image: rvdImg)
+                    }
+                }
+                
+                
+//                let newFriendList = friendList.map{
+//                    if($0.peerId == peerID){
+//                        $0.images?.append(rvdImg)
+//                    }
+//                }
+//                friendList = newFriendList
+                
+                
+                
             }
         } else {
             log.info("didReceive invalid value \(data.count) bytes")

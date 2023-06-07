@@ -7,5 +7,10 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
 //bool data type whether in gallery
-typealias ImgType = (img : String, isStored : Bool)
+struct ImgType : Hashable {
+    
+    public var img : UIImage
+    public var isStored : Bool
+}

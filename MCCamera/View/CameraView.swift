@@ -191,7 +191,7 @@ struct CameraLowerView: View{
                 //preview
                 Button(action: {isPresentingGallery.toggle()}){
                     if let previewImage = viewModel.recentImage {
-                        Image(uiImage: previewImage)
+                        Image(uiImage: UIImage(data: previewImage)!)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 46, height: 46)
@@ -220,9 +220,11 @@ struct CameraLowerView: View{
                 //shutter
                 Button(action: {
                     viewModel.capturePhoto()
-                    if let image = viewModel.recentImage {
-                        rpsSession.send(image: image)
-                    }
+//                    if let image = viewModel.recentImage {
+//                        rpsSession.send(image: image)
+//                    }
+               
+                    
                     
                 }){
                     Circle()

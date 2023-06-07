@@ -37,7 +37,7 @@ class CameraViewModel: ObservableObject {
     var lastScale: CGFloat = 1.0
 
     @Published var shutterEffect = false
-    @Published var recentImage: UIImage?
+    @Published var recentImage: Data?
     @Published var isFlashOn = false
     @Published var isSilentModeOn = false
     @Published var photoDatas : [Data]?

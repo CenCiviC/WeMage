@@ -16,9 +16,10 @@ import SwiftUI
 
 struct RoomView: View {
     @State private var isPresentingPair = false
+    @State private var isPresentingFriend = false
+    
     @EnvironmentObject var rpsSession: RPSMultipeerSession
     @Binding var isPresentingRoomView : Bool
-   
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     let albumSize = (UIScreen.screenWidth/2)-40
@@ -59,34 +60,69 @@ struct RoomView: View {
             
             ScrollView {
                      LazyVGrid(columns: columns) {
-                         ForEach(0..<20) { index in
+//                         ForEach(0..<20) { index in
+//                             VStack(alignment: .leading){
+//                                 Rectangle()
+//                                      .frame(width: albumSize, height: albumSize)
+//                                      .cornerRadius(10)
+//                                      .foregroundColor(.mainColor)
+//
+//                                 HStack{
+//                                     Text("김수환")
+//                                         .font(.system(size: 15, weight: .semibold))
+//                                         .tracking(2)
+//                                         .foregroundColor(.black)
+//                                     Circle()
+//                                         .frame(width: 12, height: 12)
+//                                         .foregroundColor(index/2==0 ? .mainColor : .subYellow)
+//                                 }
+//
+//                                 Text("123")
+//                                     .font(.system(size: 15, weight: .regular))
+//                                     .tracking(2)
+//                                     .foregroundColor(.mainColor)
+//
+//                             }
+//                             .padding(.bottom, 30)
+//
+//
+//
+//                         }
+                         
+                         ForEach(Array(rpsSession.friendList)){ friend in
                              VStack(alignment: .leading){
-                                 Rectangle()
-                                      .frame(width: albumSize, height: albumSize)
-                                      .cornerRadius(10)
-                                      .foregroundColor(.mainColor)
+                                 Button(action:{isPresentingFriend.toggle()}){
+                                     Rectangle()
+                                          .frame(width: albumSize, height: albumSize)
+                                          .cornerRadius(10)
+                                          .foregroundColor(.mainColor)
+                                 }
+                                 .fullScreenCover(isPresented: $isPresentingFriend){
+                                     FriendGalleryView(friend: friend)
+                                 }
+                         
+                                
                                       
                                  HStack{
-                                     Text("김수환")
+                                     Text("\(friend.peerId.displayName)")
                                          .font(.system(size: 15, weight: .semibold))
                                          .tracking(2)
                                          .foregroundColor(.black)
                                      Circle()
                                          .frame(width: 12, height: 12)
-                                         .foregroundColor(index/2==0 ? .mainColor : .subYellow)
+                                         .foregroundColor(friend.isConnected ? .mainColor : .subYellow)
                                  }
                                 
-                                 Text("123")
+                                 Text("\(friend.images.count)")
                                      .font(.system(size: 15, weight: .regular))
                                      .tracking(2)
                                      .foregroundColor(.mainColor)
                                  
                              }
                              .padding(.bottom, 30)
-                           
                              
-
                          }
+                        
                          
                   
                      }

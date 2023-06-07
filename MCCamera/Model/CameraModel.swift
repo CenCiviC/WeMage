@@ -24,7 +24,7 @@ class Camera: NSObject, ObservableObject {
     var isSilentModeOn = false
     var flashMode: AVCaptureDevice.FlashMode = .off
     
-    @Published var recentImage: UIImage?
+    @Published var recentImage: Data?
     @Published var isCameraBusy = false
     @Published var photoData = Data(count: 0)
 
@@ -41,7 +41,8 @@ class Camera: NSObject, ObservableObject {
                 }
                 
                 if session.canAddOutput(output) {
-                    session.sessionPreset = .hd4K3840x2160
+                    //resolution
+                    session.sessionPreset = .high
                     session.addOutput(output)
                     output.isHighResolutionCaptureEnabled = true
                     output.maxPhotoQualityPrioritization = .quality
@@ -252,7 +253,7 @@ extension Camera: AVCapturePhotoCaptureDelegate {
       //  guard let newimageData = croppedImage.fileDataRepresentation() else { return }
         
         self.photoData = imageData
-        self.recentImage = image
+        self.recentImage = imageData
         self.savePhoto(image)
         self.isCameraBusy = false
     }

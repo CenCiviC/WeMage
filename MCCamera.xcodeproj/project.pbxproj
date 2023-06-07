@@ -16,6 +16,7 @@
 		D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C7E2A1F587300401BA0 /* GalleryView.swift */; };
 		D79A0C812A1F589400401BA0 /* RoomCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C802A1F589400401BA0 /* RoomCreateView.swift */; };
 		D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C822A1F58A900401BA0 /* RoomView.swift */; };
+		D79C2E002A305988005573A4 /* FriendGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */; };
 		D79C35DE2A1E0FBC00FAF987 /* MCCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C35DD2A1E0FBC00FAF987 /* MCCameraApp.swift */; };
 		D79C35E22A1E0FBC00FAF987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79C35E12A1E0FBC00FAF987 /* Assets.xcassets */; };
 		D79C35E52A1E0FBC00FAF987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79C35E42A1E0FBC00FAF987 /* Preview Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		D79A0C7E2A1F587300401BA0 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		D79A0C802A1F589400401BA0 /* RoomCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreateView.swift; sourceTree = "<group>"; };
 		D79A0C822A1F58A900401BA0 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendGalleryView.swift; sourceTree = "<group>"; };
 		D79C35DA2A1E0FBC00FAF987 /* MCCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79C35DD2A1E0FBC00FAF987 /* MCCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCameraApp.swift; sourceTree = "<group>"; };
 		D79C35E12A1E0FBC00FAF987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				D79A0C782A1F580000401BA0 /* CameraView.swift */,
 				D79A0C7E2A1F587300401BA0 /* GalleryView.swift */,
 				D79A0C822A1F58A900401BA0 /* RoomView.swift */,
+				D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */,
 				D79A0C802A1F589400401BA0 /* RoomCreateView.swift */,
 				D7941CEA2A25F09300E1F7CA /* Test.swift */,
 			);
@@ -328,6 +331,7 @@
 				D798C5282A29977800F7ECE4 /* Image.swift in Sources */,
 				D7941CEB2A25F09300E1F7CA /* Test.swift in Sources */,
 				D79C35DE2A1E0FBC00FAF987 /* MCCameraApp.swift in Sources */,
+				D79C2E002A305988005573A4 /* FriendGalleryView.swift in Sources */,
 				D79A0C812A1F589400401BA0 /* RoomCreateView.swift in Sources */,
 				D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */,
 				D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */,
