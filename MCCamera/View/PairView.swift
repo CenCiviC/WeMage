@@ -20,6 +20,7 @@ struct PairView: View {
     @EnvironmentObject var rpsSession: RPSMultipeerSession
     @Environment(\.dismiss) var dismiss
     @State var btnClick : MCPeerID?
+
     
    //@Binding var currentView: Int
     
@@ -31,10 +32,10 @@ struct PairView: View {
     var body: some View {
         VStack{
             HStack{
-                Button(action : {dismiss()}){
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.mainColor)
-                }
+//                Button(action : {dismiss()}){
+//                    Image(systemName: "chevron.left")
+//                        .foregroundColor(.mainColor)
+//                }
           
                 
                 Spacer()
@@ -47,6 +48,9 @@ struct PairView: View {
             .padding(.horizontal, 30)
                 .padding(.top, 20)
                 .padding(.bottom, 50)
+
+
+            
             
             
             
@@ -92,22 +96,24 @@ struct PairView: View {
             
             Spacer()
             
-            
+
+   
             
 
             
         }
-        .alert("Received an invite from \(rpsSession.recvdInviteFrom?.displayName ?? "ERR")!", isPresented: $rpsSession.recvdInvite) {
-            Button("Accept invite") {
+        .alert("\(rpsSession.recvdInviteFrom?.displayName ?? "에러")에게 친구 추가가 왔습니다!", isPresented: $rpsSession.recvdInvite) {
+            Button("추가") {
                 if (rpsSession.invitationHandler != nil) {
                     rpsSession.invitationHandler!(true, rpsSession.session)
                 }
             }
-            Button("Reject invite") {
+            Button("거절") {
                 if (rpsSession.invitationHandler != nil) {
                     rpsSession.invitationHandler!(false, nil)
                 }
             }
         }
+    
     }
 }

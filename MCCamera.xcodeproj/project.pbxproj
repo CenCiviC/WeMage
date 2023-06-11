@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D7941CEB2A25F09300E1F7CA /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7941CEA2A25F09300E1F7CA /* Test.swift */; };
+		D798665C2A32F8C9000BCC8E /* motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798665B2A32F8C9000BCC8E /* motion.swift */; };
+		D798665E2A3305D5000BCC8E /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798665D2A3305D5000BCC8E /* ImageDetailView.swift */; };
+		D79866602A331575000BCC8E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798665F2A331575000BCC8E /* Extension.swift */; };
 		D798C5262A29930800F7ECE4 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798C5252A29930800F7ECE4 /* Friend.swift */; };
 		D798C5282A29977800F7ECE4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798C5272A29977800F7ECE4 /* Image.swift */; };
 		D79A0C792A1F580000401BA0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C782A1F580000401BA0 /* CameraView.swift */; };
 		D79A0C7B2A1F582800401BA0 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C7A2A1F582800401BA0 /* CameraModel.swift */; };
 		D79A0C7D2A1F584700401BA0 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C7C2A1F584700401BA0 /* CameraViewModel.swift */; };
 		D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C7E2A1F587300401BA0 /* GalleryView.swift */; };
-		D79A0C812A1F589400401BA0 /* RoomCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C802A1F589400401BA0 /* RoomCreateView.swift */; };
 		D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A0C822A1F58A900401BA0 /* RoomView.swift */; };
 		D79C2E002A305988005573A4 /* FriendGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */; };
 		D79C35DE2A1E0FBC00FAF987 /* MCCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C35DD2A1E0FBC00FAF987 /* MCCameraApp.swift */; };
@@ -48,13 +50,15 @@
 
 /* Begin PBXFileReference section */
 		D7941CEA2A25F09300E1F7CA /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		D798665B2A32F8C9000BCC8E /* motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = motion.swift; sourceTree = "<group>"; };
+		D798665D2A3305D5000BCC8E /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		D798665F2A331575000BCC8E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D798C5252A29930800F7ECE4 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		D798C5272A29977800F7ECE4 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D79A0C782A1F580000401BA0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D79A0C7A2A1F582800401BA0 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
 		D79A0C7C2A1F584700401BA0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		D79A0C7E2A1F587300401BA0 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
-		D79A0C802A1F589400401BA0 /* RoomCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreateView.swift; sourceTree = "<group>"; };
 		D79A0C822A1F58A900401BA0 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendGalleryView.swift; sourceTree = "<group>"; };
 		D79C35DA2A1E0FBC00FAF987 /* MCCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,8 +170,9 @@
 				D79A0C7E2A1F587300401BA0 /* GalleryView.swift */,
 				D79A0C822A1F58A900401BA0 /* RoomView.swift */,
 				D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */,
-				D79A0C802A1F589400401BA0 /* RoomCreateView.swift */,
+				D798665D2A3305D5000BCC8E /* ImageDetailView.swift */,
 				D7941CEA2A25F09300E1F7CA /* Test.swift */,
+				D798665B2A32F8C9000BCC8E /* motion.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				D798C5252A29930800F7ECE4 /* Friend.swift */,
 				D798C5272A29977800F7ECE4 /* Image.swift */,
 				D7F3AE982A2C71A5004A2857 /* Theme.swift */,
+				D798665F2A331575000BCC8E /* Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,16 +331,18 @@
 				D79C36122A1E128200FAF987 /* PairView.swift in Sources */,
 				D79C36142A1E12D900FAF987 /* StartView.swift in Sources */,
 				D79C360C2A1E11C200FAF987 /* MCSession.swift in Sources */,
+				D798665E2A3305D5000BCC8E /* ImageDetailView.swift in Sources */,
 				D798C5262A29930800F7ECE4 /* Friend.swift in Sources */,
 				D79A0C792A1F580000401BA0 /* CameraView.swift in Sources */,
 				D79A0C7D2A1F584700401BA0 /* CameraViewModel.swift in Sources */,
 				D798C5282A29977800F7ECE4 /* Image.swift in Sources */,
 				D7941CEB2A25F09300E1F7CA /* Test.swift in Sources */,
 				D79C35DE2A1E0FBC00FAF987 /* MCCameraApp.swift in Sources */,
+				D79866602A331575000BCC8E /* Extension.swift in Sources */,
 				D79C2E002A305988005573A4 /* FriendGalleryView.swift in Sources */,
-				D79A0C812A1F589400401BA0 /* RoomCreateView.swift in Sources */,
 				D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */,
 				D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */,
+				D798665C2A32F8C9000BCC8E /* motion.swift in Sources */,
 				D79A0C7B2A1F582800401BA0 /* CameraModel.swift in Sources */,
 				D7F3AE992A2C71A5004A2857 /* Theme.swift in Sources */,
 			);
@@ -504,12 +512,12 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 동의?";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "네트워크 동의?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치동의?";
+				INFOPLIST_KEY_NSMotionUsageDescription = "모션 동의?";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가 동의?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -541,12 +549,12 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 동의?";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "네트워크 동의?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치동의?";
+				INFOPLIST_KEY_NSMotionUsageDescription = "모션 동의?";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가 동의?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

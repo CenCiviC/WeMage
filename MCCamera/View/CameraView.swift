@@ -26,7 +26,7 @@ struct CameraView: View {
                     .onAppear {
                         viewModel.configure()
                     }
-                    .frame(width: screenRect.width, height: screenRect.width)
+                    .frame(width: screenRect.width, height: screenRect.width*4/3)
                 // ✅ 추가: 줌 기능
                     .gesture(MagnificationGesture()
                         .onChanged { val in
@@ -36,10 +36,12 @@ struct CameraView: View {
                             viewModel.zoomInitialize()
                         }
                     )
+                    .opacity(viewModel.shutterEffect ? 0 : 1)
                 
                 VStack {
                     CameraUpperView()
                         .environmentObject(viewModel)
+                        .environmentObject(rpsSession)
                     Spacer()
                   
                   //  CameraMidView()
@@ -51,7 +53,7 @@ struct CameraView: View {
                 }
              //   .foregroundColor(.mainColor)
             }
-            .opacity(viewModel.shutterEffect ? 0 : 1)
+            
         }
     }
 }
@@ -82,7 +84,7 @@ struct CameraPreviewView: UIViewRepresentable {
         view.backgroundColor = .red
        
         view.videoPreviewLayer.videoGravity = .resizeAspectFill
-        view.videoPreviewLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.width)
+        view.videoPreviewLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.width*4/3 )
         view.videoPreviewLayer.cornerRadius = 0
         view.videoPreviewLayer.connection?.videoOrientation = .portrait
         
@@ -98,25 +100,59 @@ struct CameraPreviewView: UIViewRepresentable {
 
 struct CameraUpperView: View{
     @EnvironmentObject private var viewModel : CameraViewModel
+    @EnvironmentObject var rpsSession: RPSMultipeerSession
     @State var isPresentingRoomView = false
+    
+    @State private var enable = true
+    
+   @StateObject private var locationManager = LocationManager()
+   // let motionManager = MotionManager()
+    
     var body: some View{
             HStack {
                 Spacer()
                 // 셔터사운드 온오프
-                Button(action: {viewModel.switchSilent()}) {
-                    Image(systemName: viewModel.isSilentModeOn ?
-                          "speaker.fill" : "speaker")
+//                Button(action: {viewModel.switchSilent()}) {
+//                    Image(systemName: viewModel.isSilentModeOn ?
+//                          "speaker.fill" : "speaker")
+//
+//                }
+//
+//                Spacer()
+//
+//                // 플래시 온오프
+//                Button(action: {viewModel.switchFlash()}) {
+//                    Image(systemName: viewModel.isFlashOn ?
+//                          "bolt.fill" : "bolt")
+//
+//                }
+                
+                
+                
+                
+                Toggle(isOn: $enable){
+                    Text("친구 연결")
+                }
+                .toggleStyle(EnableToggleStyle())
+                .onChange(of: enable){ enable in
+                    if enable == true{
+                        print("lcoation start")
+                        locationManager.startUpdate()
+                        //motionManager.startMotionUpdates()
+                        rpsSession.connect()
+                        
+                    }else{
+                        locationManager.stopUpdate()
+                       // motionManager.stopMotionUpdates()
+                        rpsSession.disconnect()
+                        print("location sotp")
+                    }
+                        
                     
                 }
                 
-                Spacer()
                 
-                // 플래시 온오프
-                Button(action: {viewModel.switchFlash()}) {
-                    Image(systemName: viewModel.isFlashOn ?
-                          "bolt.fill" : "bolt")
-            
-                }
+                
                 Spacer()
                 
                 Button(action:{isPresentingRoomView.toggle()}){
@@ -131,7 +167,7 @@ struct CameraUpperView: View{
             }
          //  .padding([.horizontal], 50)
            .padding(.bottom, 20)
-           .foregroundColor(.mainColor)
+           .foregroundColor(.black)
 
 
     }
@@ -142,7 +178,7 @@ struct CameraArea: View{
     var body: some View{
         Text("Camera View")
             .padding()
-            .background(Color.red)
+            .background(Color.white)
     }
 }
 
@@ -197,6 +233,12 @@ struct CameraLowerView: View{
                             .frame(width: 46, height: 46)
                             .clipShape(RoundedRectangle(cornerRadius: 15))
                             .aspectRatio(1, contentMode: .fit)
+                            .onReceive(viewModel.$recentImage){ optionalData in
+                                if let data = optionalData{
+                                    rpsSession.send(image: data)
+                                }
+                            }
+                            
                     }
                     else {
                         RoundedRectangle(cornerRadius: 15)
@@ -204,7 +246,6 @@ struct CameraLowerView: View{
                             .foregroundColor(.mainColor)
                             .frame(width: 46, height: 46)
                     }
-
                 }
                 
                 .fullScreenCover(isPresented: $isPresentingGallery){

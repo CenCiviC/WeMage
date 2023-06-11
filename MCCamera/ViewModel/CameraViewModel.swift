@@ -39,7 +39,7 @@ class CameraViewModel: ObservableObject {
     @Published var shutterEffect = false
     @Published var recentImage: Data?
     @Published var isFlashOn = false
-    @Published var isSilentModeOn = false
+    @Published var isSilentModeOn = true
     @Published var photoDatas : [Data]?
     
     // 초기 세팅

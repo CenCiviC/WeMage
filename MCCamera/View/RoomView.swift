@@ -16,7 +16,7 @@ import SwiftUI
 
 struct RoomView: View {
     @State private var isPresentingPair = false
-    @State private var isPresentingFriend = false
+    @State private var selectedFriend : Friend? = nil
     
     @EnvironmentObject var rpsSession: RPSMultipeerSession
     @Binding var isPresentingRoomView : Bool
@@ -59,47 +59,28 @@ struct RoomView: View {
 //            }
             
             ScrollView {
-                     LazyVGrid(columns: columns) {
-//                         ForEach(0..<20) { index in
-//                             VStack(alignment: .leading){
-//                                 Rectangle()
-//                                      .frame(width: albumSize, height: albumSize)
-//                                      .cornerRadius(10)
-//                                      .foregroundColor(.mainColor)
-//
-//                                 HStack{
-//                                     Text("김수환")
-//                                         .font(.system(size: 15, weight: .semibold))
-//                                         .tracking(2)
-//                                         .foregroundColor(.black)
-//                                     Circle()
-//                                         .frame(width: 12, height: 12)
-//                                         .foregroundColor(index/2==0 ? .mainColor : .subYellow)
-//                                 }
-//
-//                                 Text("123")
-//                                     .font(.system(size: 15, weight: .regular))
-//                                     .tracking(2)
-//                                     .foregroundColor(.mainColor)
-//
-//                             }
-//                             .padding(.bottom, 30)
-//
-//
-//
-//                         }
-                         
+                     LazyVGrid(columns: columns) {                         
                          ForEach(Array(rpsSession.friendList)){ friend in
                              VStack(alignment: .leading){
-                                 Button(action:{isPresentingFriend.toggle()}){
-                                     Rectangle()
-                                          .frame(width: albumSize, height: albumSize)
-                                          .cornerRadius(10)
-                                          .foregroundColor(.mainColor)
+                                 Button(action:{selectedFriend = friend}){
+                                     if let thumbnail = friend.images.last?.img{
+                                         Image(uiImage: thumbnail)
+                                             .resizable()
+                                             .scaledToFill()
+                                             .frame(width: albumSize, height: albumSize)
+                                             .clipShape(RoundedRectangle(cornerRadius: 10))
+                                             .aspectRatio(1, contentMode: .fit)
+                                     }else{
+                                         Rectangle()
+                                              .frame(width: albumSize, height: albumSize)
+                                              .cornerRadius(10)
+                                              .foregroundColor(.mainColor)
+                                     }
+                                     
+                                     
+                                  
                                  }
-                                 .fullScreenCover(isPresented: $isPresentingFriend){
-                                     FriendGalleryView(friend: friend)
-                                 }
+                 
                          
                                 
                                       
@@ -121,6 +102,9 @@ struct RoomView: View {
                              }
                              .padding(.bottom, 30)
                              
+                         }
+                         .fullScreenCover(item: $selectedFriend){ friend in
+                             FriendGalleryView(friend: friend)
                          }
                         
                          
@@ -149,10 +133,12 @@ struct RoomView: View {
 //            Spacer()
 //            MyView()
         }
+      
   
         
 
     }
+    
 }
 
 //

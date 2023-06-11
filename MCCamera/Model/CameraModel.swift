@@ -16,12 +16,12 @@ import Foundation
 import AVFoundation
 import SwiftUI
 
-class Camera: NSObject, ObservableObject {
+class Camera: NSObject, ObservableObject {    
     var session = AVCaptureSession()
     var videoDeviceInput: AVCaptureDeviceInput!
     let output = AVCapturePhotoOutput()
     //var photoData = Data(count: 0)
-    var isSilentModeOn = false
+    var isSilentModeOn = true
     var flashMode: AVCaptureDevice.FlashMode = .off
     
     @Published var recentImage: Data?
@@ -42,10 +42,13 @@ class Camera: NSObject, ObservableObject {
                 
                 if session.canAddOutput(output) {
                     //resolution
-                    session.sessionPreset = .high
+                    session.sessionPreset = .photo
                     session.addOutput(output)
-                    output.isHighResolutionCaptureEnabled = true
+                    //output.isHighResolutionCaptureEnabled = true
+                    //output.maxPhotoDimensions = .init()
                     output.maxPhotoQualityPrioritization = .quality
+                    
+                   
                 }
                 session.startRunning() // 세션 시작
             } catch {
@@ -81,13 +84,15 @@ class Camera: NSObject, ObservableObject {
         // 사진 옵션 세팅
         let photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
         photoSettings.flashMode = self.flashMode
-        let photoSize = CGSize(width: 1920, height: 1440) // Adjust the size as needed
-        
-        photoSettings.previewPhotoFormat = [
-            kCVPixelBufferPixelFormatTypeKey as String: photoSettings.availablePreviewPhotoPixelFormatTypes.first!,
-            kCVPixelBufferWidthKey as String: photoSize.width,
-            kCVPixelBufferHeightKey as String: photoSize.height
-        ]
+
+       // photoSettings.maxPhotoDimensions = .init(width: 1080, height: 1080)
+//        let photoSize = CGSize(width: 1920, height: 1440) // Adjust the size as needed
+//
+//        photoSettings.previewPhotoFormat = [
+//            kCVPixelBufferPixelFormatTypeKey as String: photoSettings.availablePreviewPhotoPixelFormatTypes.first!,
+//            kCVPixelBufferWidthKey as String: photoSize.width,
+//            kCVPixelBufferHeightKey as String: photoSize.height
+//        ]
         
         
         

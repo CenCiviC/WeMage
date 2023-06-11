@@ -32,6 +32,7 @@ struct StartView: View {
             
         case 0:
             CameraView(currentView: $currentView)
+            
                 .environmentObject(rpsSession!)
                 .environmentObject(cameraViewModel)
                 

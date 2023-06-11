@@ -41,10 +41,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
 
+    
     override init() {
         super.init()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.showsBackgroundLocationIndicator = true
         locationManager.requestWhenInUseAuthorization()
@@ -78,4 +79,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         lastLocation = location
         print(#function, location)
     }
+    func startUpdate(){
+        locationManager.startUpdatingLocation()
+    }
+    func stopUpdate(){
+        locationManager.stopUpdatingLocation()
+    }
+    
 }

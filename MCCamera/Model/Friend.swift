@@ -23,8 +23,27 @@ class Friend : Identifiable, ObservableObject {
         images.append(image)
     }
     
-    func connectionChange(){
-        self.isConnected.toggle()
+    func connect(){
+        self.isConnected = true
+    }
+    func disconnect(){
+        self.isConnected = false
+    }
+    
+    func deleteAllImg(){
+        images.removeAll(where: {$0.isStored == false})
+    }
+    
+    func imgStore(){
+        
+        images.forEach({ img in
+            if(img.isSelected){
+                UIImageWriteToSavedPhotosAlbum(img.img, nil, nil, nil)
+                img.storeImg()
+                img.toggleSelect()
+            }
+            
+        })
     }
     
 }

@@ -65,8 +65,10 @@ struct GalleryView: View {
                              ForEach(viewModel.photoDatas!, id: \.self) { data in
                                  Image(uiImage: UIImage(data: data)!)
                                      .resizable()
+                                     .scaledToFill()
                                      .frame(width: imgSize, height: imgSize)
-                                     .scaledToFit()
+                                     .clipped()
+                                     .aspectRatio(1, contentMode: .fit)
 
                              }
                          }
