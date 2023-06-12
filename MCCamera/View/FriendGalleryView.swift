@@ -9,11 +9,12 @@ import SwiftUI
 
 struct FriendGalleryView: View {
     @Environment(\.dismiss) var dismiss
-    @ObservedObject public var friend : Friend
+    @StateObject public var friend : Friend
     @State private var selectedIndex : Int? = nil
     @State private var deleteAlertMsg : Bool = false
     @State private var doSelecting : Bool = false
-    
+    @State private var selectedcnt : Int = 0
+    @State private var alertSave : Bool = false
     
     var body: some View {
         let columns = [
@@ -47,7 +48,7 @@ struct FriendGalleryView: View {
                     }.alert("앨범에 저장된 사진 이외의 사진을 지우시겠습니까?", isPresented: $deleteAlertMsg) {
                         Button("삭제") {
                             friend.deleteAllImg()
-                        }
+                        }.foregroundColor(.red)
                         Button("취소") {
                             print("cnlth")
                         }
@@ -58,7 +59,12 @@ struct FriendGalleryView: View {
                     }
                 
                 Button(doSelecting ? "취소" : "선택"){
+                    if(doSelecting){
+                        friend.cancellSelection()
+                    }
+                    
                     doSelecting.toggle()
+                    
                 }
             }
                     .foregroundColor(.mainColor)
@@ -92,6 +98,11 @@ struct FriendGalleryView: View {
                                         .frame(width: imgSize, height: imgSize)
                                         .clipped()
                                         .aspectRatio(1, contentMode: .fit)
+                                        .overlay(
+                                            Rectangle()
+                                                .stroke(!imgType.isStored ?   Color.white:  Color.mainColor, lineWidth: 1)
+                                        )
+                                     
                                   
                             
                                 imgType.isSelected && doSelecting ?
@@ -101,20 +112,25 @@ struct FriendGalleryView: View {
                                             .foregroundColor(.black)
                                             .opacity(0.7)
                                 
-                                        Circle()
-                                            .frame(width: 10, height: 10)
-                                            .foregroundColor(.blue)
+                                        Image(systemName: "checkmark.circle")
+                                            .frame(width: 20, height: 20)
+                                            .foregroundColor(.mainColor)
+                                       
                                     }
                                 : nil
                             }
                             .onTapGesture {
                                 if(doSelecting){
-                                    imgType.toggleSelect()
-                                    print("\(imgType.isSelected)")
+                                    var newImgType = imgType
+                                    newImgType.toggleSelect()
+                                    friend.images[index] = newImgType
+                                    selectedcnt = friend.selectedImgCount()
+                                    print(selectedcnt)
                                 }else{
                                     selectedIndex = index
                                 }
                             }
+                            
                             
                             
                         
@@ -137,7 +153,36 @@ struct FriendGalleryView: View {
                     }
                     
                 }
+            if(doSelecting){
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        friend.imgStore()
+                        alertSave.toggle()
+                    }){
+                        Text("\(selectedcnt)장의 사진을 앨범에 저장")
+                            .padding(.vertical, 30)
+                            .foregroundColor(.white)
+                            .font(.system(size: 18, weight: .semibold))
+                    }
+              
+                        
+                    Spacer()
+                }.edgesIgnoringSafeArea(.bottom)
+                    .background(Color.mainColor)
+                
+                
+                
+               
+                    
             }
+            
+        }.alert("저장되었습니다.", isPresented: $alertSave){
+            Button("확인"){
+                doSelecting.toggle()
+                
+            }
+        }
             
         }
     }

@@ -103,6 +103,8 @@ struct CameraUpperView: View{
     @EnvironmentObject var rpsSession: RPSMultipeerSession
     @State var isPresentingRoomView = false
     
+    @State private var alerToggle = false
+    
     @State private var enable = true
     
    @StateObject private var locationManager = LocationManager()
@@ -131,7 +133,7 @@ struct CameraUpperView: View{
                 
                 
                 Toggle(isOn: $enable){
-                    Text("친구 연결")
+                    Image(systemName: "person.2.fill")
                 }
                 .toggleStyle(EnableToggleStyle())
                 .onChange(of: enable){ enable in
@@ -142,13 +144,19 @@ struct CameraUpperView: View{
                         rpsSession.connect()
                         
                     }else{
+                        alerToggle.toggle()
                         locationManager.stopUpdate()
                        // motionManager.stopMotionUpdates()
                         rpsSession.disconnect()
                         print("location sotp")
                     }
-                        
                     
+                    
+                }
+                .alert("꺼놓을 경우 친구와의 사진이 공유되지 않습니다.", isPresented: $alerToggle){
+                    Button("확인"){
+                        
+                    }
                 }
                 
                 
@@ -168,6 +176,7 @@ struct CameraUpperView: View{
          //  .padding([.horizontal], 50)
            .padding(.bottom, 20)
            .foregroundColor(.black)
+
 
 
     }
@@ -315,8 +324,10 @@ struct CameraLowerView: View{
         .padding([.bottom], 20)
         .padding(.top, 30)
         .background(Color.white)
+        
     
     }
+        
 }
 
 

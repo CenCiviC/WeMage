@@ -28,6 +28,7 @@
 		D79C360C2A1E11C200FAF987 /* MCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C360B2A1E11C200FAF987 /* MCSession.swift */; };
 		D79C36122A1E128200FAF987 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C36112A1E128200FAF987 /* PairView.swift */; };
 		D79C36142A1E12D900FAF987 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C36132A1E12D900FAF987 /* StartView.swift */; };
+		D79CF91A2A36FCD6004D010F /* MyGalleryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CF9192A36FCD6004D010F /* MyGalleryDetailView.swift */; };
 		D7F3AE992A2C71A5004A2857 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3AE982A2C71A5004A2857 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		D79C360B2A1E11C200FAF987 /* MCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSession.swift; sourceTree = "<group>"; };
 		D79C36112A1E128200FAF987 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
 		D79C36132A1E12D900FAF987 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		D79CF9192A36FCD6004D010F /* MyGalleryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGalleryDetailView.swift; sourceTree = "<group>"; };
 		D7F3AE982A2C71A5004A2857 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				D79C36132A1E12D900FAF987 /* StartView.swift */,
 				D79A0C782A1F580000401BA0 /* CameraView.swift */,
 				D79A0C7E2A1F587300401BA0 /* GalleryView.swift */,
+				D79CF9192A36FCD6004D010F /* MyGalleryDetailView.swift */,
 				D79A0C822A1F58A900401BA0 /* RoomView.swift */,
 				D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */,
 				D798665D2A3305D5000BCC8E /* ImageDetailView.swift */,
@@ -342,6 +345,7 @@
 				D79C2E002A305988005573A4 /* FriendGalleryView.swift in Sources */,
 				D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */,
 				D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */,
+				D79CF91A2A36FCD6004D010F /* MyGalleryDetailView.swift in Sources */,
 				D798665C2A32F8C9000BCC8E /* motion.swift in Sources */,
 				D79A0C7B2A1F582800401BA0 /* CameraModel.swift in Sources */,
 				D7F3AE992A2C71A5004A2857 /* Theme.swift in Sources */,

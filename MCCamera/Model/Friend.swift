@@ -6,6 +6,7 @@
 //
 
 import MultipeerConnectivity
+import Photos
 
 class Friend : Identifiable, ObservableObject {
     public var peerId : MCPeerID
@@ -42,6 +43,24 @@ class Friend : Identifiable, ObservableObject {
                 img.storeImg()
                 img.toggleSelect()
             }
+            
+        })
+    }
+    
+    func selectedImgCount()-> Int{
+        var count = 0
+        
+        images.forEach({ img in
+            img.isSelected ? count += 1 : nil
+            
+        })
+        
+        return count
+    }
+    
+    func cancellSelection(){
+        images.forEach({ img in
+            img.isSelected = false
             
         })
     }
