@@ -29,6 +29,7 @@
 		D79C36122A1E128200FAF987 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C36112A1E128200FAF987 /* PairView.swift */; };
 		D79C36142A1E12D900FAF987 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C36132A1E12D900FAF987 /* StartView.swift */; };
 		D79CF91A2A36FCD6004D010F /* MyGalleryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CF9192A36FCD6004D010F /* MyGalleryDetailView.swift */; };
+		D7BC98D62A38246A00EA5B7E /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC98D52A38246A00EA5B7E /* ImageFileManager.swift */; };
 		D7F3AE992A2C71A5004A2857 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3AE982A2C71A5004A2857 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		D79C36112A1E128200FAF987 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
 		D79C36132A1E12D900FAF987 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		D79CF9192A36FCD6004D010F /* MyGalleryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGalleryDetailView.swift; sourceTree = "<group>"; };
+		D7BC98D52A38246A00EA5B7E /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		D7F3AE982A2C71A5004A2857 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,12 +168,12 @@
 		D79C36072A1E0FD500FAF987 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D79C36112A1E128200FAF987 /* PairView.swift */,
 				D79C36132A1E12D900FAF987 /* StartView.swift */,
-				D79A0C782A1F580000401BA0 /* CameraView.swift */,
 				D79A0C7E2A1F587300401BA0 /* GalleryView.swift */,
 				D79CF9192A36FCD6004D010F /* MyGalleryDetailView.swift */,
+				D79A0C782A1F580000401BA0 /* CameraView.swift */,
 				D79A0C822A1F58A900401BA0 /* RoomView.swift */,
+				D79C36112A1E128200FAF987 /* PairView.swift */,
 				D79C2DFF2A305988005573A4 /* FriendGalleryView.swift */,
 				D798665D2A3305D5000BCC8E /* ImageDetailView.swift */,
 				D7941CEA2A25F09300E1F7CA /* Test.swift */,
@@ -189,6 +191,7 @@
 				D798C5272A29977800F7ECE4 /* Image.swift */,
 				D7F3AE982A2C71A5004A2857 /* Theme.swift */,
 				D798665F2A331575000BCC8E /* Extension.swift */,
+				D7BC98D52A38246A00EA5B7E /* ImageFileManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				D7941CEB2A25F09300E1F7CA /* Test.swift in Sources */,
 				D79C35DE2A1E0FBC00FAF987 /* MCCameraApp.swift in Sources */,
 				D79866602A331575000BCC8E /* Extension.swift in Sources */,
+				D7BC98D62A38246A00EA5B7E /* ImageFileManager.swift in Sources */,
 				D79C2E002A305988005573A4 /* FriendGalleryView.swift in Sources */,
 				D79A0C832A1F58A900401BA0 /* RoomView.swift in Sources */,
 				D79A0C7F2A1F587300401BA0 /* GalleryView.swift in Sources */,
@@ -513,11 +517,11 @@
 				INFOPLIST_FILE = MCCamera/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Wemage;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 동의?";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "네트워크 동의?";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치동의?";
-				INFOPLIST_KEY_NSMotionUsageDescription = "모션 동의?";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가 동의?";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Wemage에서 카메라를 사용합니다";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Wemage에서 사용자를 추가하기 위해 네트워크를 사용합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자와 연결을 위해 위치서비스를 사용합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Wemage에서 사용자를 추가하기 위해 위치를 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Wemage에서 사진을 추가합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -550,11 +554,11 @@
 				INFOPLIST_FILE = MCCamera/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Wemage;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 동의?";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "네트워크 동의?";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치동의?";
-				INFOPLIST_KEY_NSMotionUsageDescription = "모션 동의?";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가 동의?";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Wemage에서 카메라를 사용합니다";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Wemage에서 사용자를 추가하기 위해 네트워크를 사용합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자와 연결을 위해 위치서비스를 사용합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Wemage에서 사용자를 추가하기 위해 위치를 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Wemage에서 사진을 추가합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

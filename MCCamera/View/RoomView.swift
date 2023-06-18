@@ -91,7 +91,7 @@ struct RoomView: View {
                                          .foregroundColor(.black)
                                      Circle()
                                          .frame(width: 12, height: 12)
-                                         .foregroundColor(friend.isConnected ? .mainColor : .subYellow)
+                                         .foregroundColor(friend.isConnected ? .mainColor : .red)
                                  }
                                 
                                  Text("\(friend.images.count)")

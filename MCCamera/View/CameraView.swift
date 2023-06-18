@@ -81,7 +81,7 @@ struct CameraPreviewView: UIViewRepresentable {
         print(screenRect.size.height)
         
         view.videoPreviewLayer.session = session
-        view.backgroundColor = .red
+        view.backgroundColor = .white
        
         view.videoPreviewLayer.videoGravity = .resizeAspectFill
         view.videoPreviewLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.width*4/3 )

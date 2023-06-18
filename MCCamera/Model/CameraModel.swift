@@ -217,7 +217,7 @@ class Camera: NSObject, ObservableObject {
                     }
                 }
                 
-                output.isHighResolutionCaptureEnabled = true
+              //  output.isHighResolutionCaptureEnabled = true
                 output.maxPhotoQualityPrioritization = .quality
                 
                 self.session.commitConfiguration()

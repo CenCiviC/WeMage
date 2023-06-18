@@ -42,6 +42,7 @@ class RPSMultipeerSession: NSObject, ObservableObject {
     //public var friendList: [Friend] = []
     
     public var friendList = Set<Friend>();
+    private var comparing : Bool = false
     
         
     private let log = Logger()
@@ -118,11 +119,13 @@ class RPSMultipeerSession: NSObject, ObservableObject {
          
             for peer in availablePeers{
                 if(friend.peerId.displayName == peer.displayName){
+                    comparing = true
                     self.serviceBrowser.invitePeer(peer, to: self.session, withContext: nil, timeout: 30)
                     if (invitationHandler != nil) {
                         invitationHandler!(true, session)
                     }
                     self.recvdInvite = false
+                    comparing = false
                 }
             }
             
@@ -153,12 +156,16 @@ extension RPSMultipeerSession: MCNearbyServiceAdvertiserDelegate {
         log.info("didReceiveInvitationFromPeer \(peerID)")
         
         DispatchQueue.main.async {
-            // Tell PairView to show the invitation alert
-            self.recvdInvite = true
-            // Give PairView the peerID of the peer who invited us
-            self.recvdInviteFrom = peerID
-            // Give PairView the `invitationHandler` so it can accept/deny the invitation
-            self.invitationHandler = invitationHandler
+            
+                // Tell PairView to show the invitation alert
+                self.recvdInvite = true
+                // Give PairView the peerID of the peer who invited us
+                self.recvdInviteFrom = peerID
+                // Give PairView the `invitationHandler` so it can accept/deny the invitation
+                self.invitationHandler = invitationHandler
+            
+            
+          
         }
     }
 }
