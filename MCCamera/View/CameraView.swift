@@ -18,15 +18,20 @@ struct CameraView: View {
     @Binding var currentView: Int
     
     let screenRect = UIScreen.main.bounds
+    let cameraOffset = CGSize(width: 0, height: -40)
+    
+    let cols: [GridItem] = Array(repeating: .init(.flexible(), spacing: 0), count: 3)
     var body: some View {
         NavigationStack{
             ZStack {
-              
+                Color.white.ignoresSafeArea()
+                
                 viewModel.cameraPreview.ignoresSafeArea()
                     .onAppear {
                         viewModel.configure()
                     }
                     .frame(width: screenRect.width, height: screenRect.width*4/3)
+                    .offset(cameraOffset)
                 // ✅ 추가: 줌 기능
                     .gesture(MagnificationGesture()
                         .onChanged { val in
@@ -38,6 +43,19 @@ struct CameraView: View {
                     )
                     .opacity(viewModel.shutterEffect ? 0 : 1)
                 
+                LazyVGrid(columns: cols, spacing: 0){
+                    ForEach((0...8), id: \.self){ _ in
+                        Rectangle()
+                            .stroke(lineWidth: 0.5)
+                            .foregroundColor(.white)
+                            .frame(height: screenRect.width*4/3/3)
+                            .offset(cameraOffset)
+                            
+                    }
+                }
+                
+                
+                
                 VStack {
                     CameraUpperView()
                         .environmentObject(viewModel)
@@ -48,7 +66,6 @@ struct CameraView: View {
                     CameraLowerView()
                         .environmentObject(viewModel)
                         .environmentObject(rpsSession)
-                    
                  
                 }
              //   .foregroundColor(.mainColor)
@@ -323,7 +340,7 @@ struct CameraLowerView: View{
         
         .padding([.bottom], 20)
         .padding(.top, 30)
-        .background(Color.white)
+        //.background(Color.white)
         
     
     }
