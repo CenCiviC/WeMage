@@ -15,8 +15,6 @@ struct CameraView: View {
     @EnvironmentObject var rpsSession: RPSMultipeerSession
     
     
-    @Binding var currentView: Int
-    
     let screenRect = UIScreen.main.bounds
     let cameraOffset = CGSize(width: 0, height: -40)
     
@@ -156,13 +154,13 @@ struct CameraUpperView: View{
                 .onChange(of: enable){ enable in
                     if enable == true{
                         print("lcoation start")
-                        locationManager.startUpdate()
+                      //  locationManager.startUpdate()
                         //motionManager.startMotionUpdates()
                         rpsSession.connect()
                         
                     }else{
                         alerToggle.toggle()
-                        locationManager.stopUpdate()
+                      //  locationManager.stopUpdate()
                        // motionManager.stopMotionUpdates()
                         rpsSession.disconnect()
                         print("location sotp")
@@ -193,7 +191,17 @@ struct CameraUpperView: View{
          //  .padding([.horizontal], 50)
            .padding(.bottom, 20)
            .foregroundColor(.black)
-
+           .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+               print("background")
+               if(enable){
+                   locationManager.startUpdate()
+               }
+           }
+           .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+               print("foreground")
+               locationManager.stopUpdate()
+           }
+        
 
 
     }

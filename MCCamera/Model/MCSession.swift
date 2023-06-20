@@ -143,7 +143,6 @@ class RPSMultipeerSession: NSObject, ObservableObject {
     func connect(){
         sessionAvailable = true
     }
-
 }
 
 extension RPSMultipeerSession: MCNearbyServiceAdvertiserDelegate {

@@ -13,6 +13,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct StartView: View {
     @StateObject private var cameraViewModel = CameraViewModel()
@@ -21,37 +22,41 @@ struct StartView: View {
     @State var currentView = 10
     
     @State var username = ""
+    
+
+    
     var body: some View {
+
+            
+            
         switch currentView {
 //        case 1:
 //            GalleryView()
 //                .environmentObject(cameraViewModel)
-            
+
 //            PairView(currentView: $currentView)
 //                .environmentObject(rpsSession!)
-            
+
         case 0:
-            CameraView(currentView: $currentView)
-            
+
+            CameraView()
                 .environmentObject(rpsSession!)
                 .environmentObject(cameraViewModel)
-                
 
-            
-
-
-            
 //        case 3:
 //            StartTabView(currentView: $currentView)
 //                .environmentObject(rpsSession!)
 //                .environmentObject(cameraViewModel)
         case 4:
             test
-            
+
         default:
             startViewBody
         }
+
     }
+        
+        
     
     var startViewBody: some View{
         VStack{
@@ -120,6 +125,7 @@ struct StartView: View {
             
         }
     }
+    
     
 
 }
